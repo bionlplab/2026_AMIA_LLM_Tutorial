@@ -44,12 +44,11 @@ a:active {
 
 a:hover {
 	color: #f09228;
-  text-decoration: none;
+  	text-decoration: none;
 }
 
 
 /* Main page container */
-
 
 .container {
 	width: 1024px;
@@ -66,7 +65,6 @@ a:hover {
 .overview {
 	text-align: left;
 }
-
 
 .containersmall {
 	width: 1024px;
@@ -99,72 +97,36 @@ a:hover {
 	margin: 1px;
 }
 
-.menubar {
+/* .menubar {
   white-space: nowrap;
   margin-bottom: 0em;
   text-align:center;
   font-size:16px;
-}
+} */
 
 
 /* Announcements */
 
 .announce_date {
+	display: inline-block;
 	font-size: .875em;
 	font-style: italic;
+	min-width: 15ex;
 }
-.announce {
+
+/* .announce {
 	font-size: inherit;
-}
+} */
+
 .schedule_week {
 	font-size: small;
 	background-color: #CCF;
 }
 
-
-/* Schedule */
-
-table.schedule {
-	border-width: 1px;
-	border-spacing: 2px;
-	border-style: none;
-	border-color: #000;
-	border-collapse: collapse;
-	background-color: white;
-}
-
-p.subtitle {
+/* p.subtitle {
 	text-indent: -5em;
 	margin-left: 5em;
-}
-
-/* Notes */
-
-table.notes {
-	border: none;
-	border-collapse: collapse;
-}
-
-.notes td {
-	border-bottom: 1px solid;
-	padding-bottom: 5px;
-	padding-top: 5px;
-}
-
-
-/* Problem sets */
-
-table.psets {
-/*	border: none;*/
-	border-collapse: collapse;
-}
-
-.psets td {
-	border-bottom: 1px solid;
-	padding-bottom: 5px;
-	padding-top: 5px;
-}
-
+} */
 
 .acknowledgement 
 { 
@@ -175,21 +137,122 @@ table.psets {
 	font-family: "Courier New", Courier, monospace 
 }
 
+/* Instrutor section */
+
 .instructorphoto img {
-  width: 120px;
-  border-radius: 120px;
-  margin-bottom: 10px;
+	width: 120px;
+	border-radius: 120px;
+	margin-bottom: 10px;
 }
 
 .instructorphotosmall img {
-  width: 60px;
-  border-radius: 60px;
-  margin-bottom: 10px;
+	width: 60px;
+	border-radius: 60px;
+	margin-bottom: 10px;
 }
 
 .instructor {
-  display: inline-block;
-  width: 200px;
-  text-align: center;
-  margin-right: 20px;
+	display: inline-block;
+	width: 200px;
+	text-align: center;
+	margin-right: 20px;
+}
+
+/* Schedule table */
+
+table.schedule {
+	width: 900px;
+	margin: 1.5em auto;
+	padding: 0;
+	border-collapse: collapse;
+	border: none;
+	background-color: #f7f7f7;
+	color: #4d4b59;
+	font-family: 'Lato', Verdana, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	text-align: left;
+}
+
+/* Header row */
+table.schedule thead th {
+	background-color: #e3e5e8;
+	color: #4d4b59;
+	font-weight: bold;
+	font-size: .9em;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 5px 7px;
+	border: none;
+	border-bottom: 2px solid #c8ccd1;
+}
+
+/* Body cells */
+table.schedule td {
+	padding: 5px 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	vertical-align: top;
+}
+
+/* Time column */
+table.schedule td:first-child,
+table.schedule th:first-child {
+	width: 16ex;
+	white-space: nowrap;
+}
+
+/* Speaker column */
+table.schedule td:last-child,
+table.schedule th:last-child {
+	width: 12ex;
+	white-space: nowrap;
+}
+
+/* Zebra striping */
+table.schedule tbody tr:nth-child(even) {
+	background-color: #fbfbfb;
+}
+
+table.schedule tbody tr:hover {
+	background-color: #eef3fa;
+}
+
+/* Last row: no trailing border */
+table.schedule tbody tr:last-child td {
+	border-bottom: 2px solid #c8ccd1;
+}
+
+/* Time text inside the table */
+table.schedule .announce_date {
+	display: inline-block;
+	font-size: .875em;
+	font-style: italic;
+	min-width: auto;
+	color: #6b6878;
+}
+
+/* Break / non-session rows */
+table.schedule tr.break td {
+	font-style: italic;
+	color: #8a8794;
+	background-color: #f2f3f5;
+}
+
+/* Links inside the table */
+table.schedule a {
+	color: #1772d0;
+	text-decoration: none;
+}
+
+table.schedule a:hover {
+	color: #f09228;
+}
+
+/* Responsive fallback */
+@media screen and (max-width: 960px) {
+	table.schedule {
+		width: 100%;
+	}
 }
